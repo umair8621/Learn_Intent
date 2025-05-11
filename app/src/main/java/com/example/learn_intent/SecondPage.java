@@ -1,6 +1,9 @@
 package com.example.learn_intent;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,20 @@ public class SecondPage extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btnPre;
+
+        btnPre = findViewById(R.id.btnPre);
+
+        btnPre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent preIntent;
+                preIntent = new Intent(SecondPage.this, MainActivity.class);
+
+                startActivity(preIntent);
+            }
         });
     }
 }
